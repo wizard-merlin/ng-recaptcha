@@ -9,11 +9,17 @@ body {
 
 #container {
   min-height: 595px;
-  background-color: $background-color-light;
+}
+
+#example {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 5px dashed $example-border-color;
 }
 
 .inner {
-  width: 620px;
+  width: $content-width;
   margin: 0 auto;
 }
 

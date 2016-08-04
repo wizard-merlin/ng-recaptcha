@@ -13,10 +13,29 @@
     <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
 
     <script src="{{ site.baseurl }}/examples/systemjs.config.js"></script>
-    {{ content }}
+    {{ page.headextras }}
   </head>
   <body>
-    <a href="https://github.com/DethAriel/ng2-recaptcha#{{ page.backlink }}" id="view-on-github" class="button"><span>Back to GitHub</span></a>
-    <my-app></my-app>
+    <div id="container">
+      <div class="inner">
+        {% include header.html %}
+        <section id="downloads" class="clearfix">
+            <a href="https://github.com/DethAriel/ng2-recaptcha#{{ page.backlink }}" id="view-on-github" class="button"><span>Back to GitHub</span></a>
+        </section>
+
+        <div id="example">
+          <my-app></my-app>
+        </div>
+
+        <p>
+          This widget was rendered using <a href="examples/app/main-{{page.feature}}.ts">the following code</a>:
+        </p>
+{% highlight typescript %}
+{% include_relative examples/app/main-{{page.feature}}.ts %}
+{% endhighlight %}
+
+      {{ content }}
+      </div>
+    </div>
   </body>
 </html>
