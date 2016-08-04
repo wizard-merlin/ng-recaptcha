@@ -8,6 +8,6 @@ backlink: loading-the-recaptcha-api-by-yourself
 <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback"></script>
 <script>
     function onloadCallback() {
-        System.import('app/main-preload-api').catch(function(err) { console.error(err); });
+        System.import('examples/main-preload-api').catch(function(err) { console.error(err); });
     }
 </script>
