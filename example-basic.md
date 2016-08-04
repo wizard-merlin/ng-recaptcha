@@ -2,7 +2,7 @@
 layout: example
 title: Basic Example
 permalink: /basic
-backlink: usage
+backlink: example-basic
 ---
 
 <script>

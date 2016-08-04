@@ -2,7 +2,7 @@
 layout: example
 title: Language Example
 permalink: /language
-backlink: specifying-a-different-language
+backlink: example-language
 ---
 
 <script>
