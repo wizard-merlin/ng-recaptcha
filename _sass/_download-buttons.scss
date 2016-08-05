@@ -30,6 +30,17 @@ a.button:hover {
   border-left: solid 1px #b3b3b3;
 }
 
+a.button.small {
+    float: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a.button.small span {
+    padding-left: 0;
+    text-align: center;
+}
+
 a.button span {
     display: block;
     height: 23px;
