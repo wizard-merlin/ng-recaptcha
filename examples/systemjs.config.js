@@ -1,7 +1,8 @@
 (function(global) {
-  global.initSystemJS = function(recaptchaMapping) {
+  global.initSystemJS = function(recaptchaMapping, loadForms) {
     // lock in the angular package version; do not let it float to current!
     var ngVer = '@2.0.0-rc.4';
+    var formsVersion = '@0.2.0';
 
     //map tells the System loader where to look for things
     var  map = {
@@ -17,8 +18,13 @@
     //packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'examples':       { defaultExtension: 'ts' },
-        'ng2-recaptcha': { main: 'ng2-recaptcha.js', defaultExtension: 'js' },
+        'ng2-recaptcha':  { main: 'ng2-recaptcha.js', defaultExtension: 'js' },
     };
+
+    if (loadForms) {
+        map['@angular/forms'] = 'https://npmcdn.com/@angular/forms';
+        packages['@angular/forms'] =  { main: 'bundles/forms.umd.js', defaultExtension: 'js' };
+    }
 
     var ngPackageNames = [
         'common',
