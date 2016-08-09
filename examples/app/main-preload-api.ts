@@ -9,10 +9,10 @@ import {
 
 @Injectable()
 export class PreloadedRecaptchaAPIService {
-  public ready: Observable<boolean>;
+  public ready: Observable<ReCaptchaV2.ReCaptcha>;
 
   constructor() { 
-    let readySubject = new BehaviorSubject<boolean>(true);
+    let readySubject = new BehaviorSubject<ReCaptchaV2.ReCaptcha>(grecaptcha);
     this.ready = readySubject.asObservable();
   }
 }

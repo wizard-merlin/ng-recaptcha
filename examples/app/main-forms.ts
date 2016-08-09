@@ -7,6 +7,8 @@ import {
 } from 'ng2-recaptcha/ng2-recaptcha';
 import { RecaptchaValueAccessor } from 'ng2-recaptcha/ng2-recaptcha.forms';
 
+import { FormModel } from './form';
+
 @Component({
   selector: 'my-app',
   styles: [ `
@@ -34,10 +36,6 @@ import { RecaptchaValueAccessor } from 'ng2-recaptcha/ng2-recaptcha.forms';
 }) 
 export class MyApp {
   formModel = new FormModel();
-}
-
-class FormModel {
-    constructor(private captcha?: string) { }
 }
 
 bootstrap(MyApp, [
