@@ -12,7 +12,7 @@
     <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
     <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
 
-    <script src="{{ site.baseurl }}/examples/systemjs.config.js"></script>
+    <script src="{{ site.baseurl }}/examples/systemjs.config.js?_t={{ site.time }}"></script>
     <script>window.initSystemJS("{{ site.recaptchaMapping }}"{% if page.includeForms %}, {{ page.includeForms }}{% endif %});</script> 
     {{ page.headextras }}
   </head>
