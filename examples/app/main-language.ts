@@ -23,6 +23,6 @@ export class MyApp {
 
 bootstrap(MyApp, [
   provide(RecaptchaLoaderService, {
-    useValue: new RecaptchaLoaderService("de"),
+    useValue: new RecaptchaLoaderService("fr"),
   })
 ]);
