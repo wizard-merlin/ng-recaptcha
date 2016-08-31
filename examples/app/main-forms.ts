@@ -1,17 +1,14 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { Component, provide } from '@angular/core';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { 
-  RecaptchaComponent, 
-  RecaptchaLoaderService,
-} from 'ng2-recaptcha/ng2-recaptcha';
-import { RecaptchaValueAccessor } from 'ng2-recaptcha/ng2-recaptcha.forms';
+import { BrowserModule }  from '@angular/platform-browser';
+import { browserDynamicPlatform } from '@angular/platform-browser-dynamic';
+import { Component, NgModule, provide } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RecaptchaModule } from 'ng2-recaptcha';
 
 import { FormModel } from './form';
 
 @Component({
   selector: 'my-app',
-  styles: [ `
+  styles: [`
       .error { color: crimson; }
       .success { color: green; }
   ` ],
@@ -22,7 +19,6 @@ import { FormModel } from './form';
         name="captcha"
         required
         siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"
-        #captcha
         #captchaControl="ngModel"
       ></recaptcha>
       <div [hidden]="captchaControl.valid || captchaControl.pristine" class="error">Captcha must be solved</div>
@@ -32,14 +28,16 @@ import { FormModel } from './form';
       <a class="button small" (click)="formModel.captcha = ''"><span>Reset Captcha</span></a>
     </form>
   `,
-  directives: [RecaptchaComponent, RecaptchaValueAccessor],
-}) 
+})
 export class MyApp {
   formModel = new FormModel();
 }
 
-bootstrap(MyApp, [
-    RecaptchaLoaderService,
-    disableDeprecatedForms(),
-    provideForms(),
-]);
+@NgModule({
+  bootstrap: [MyApp],
+  declarations: [MyApp],
+  imports: [RecaptchaModule.forRoot(), BrowserModule, FormsModule],
+})
+export class MyAppModule { }
+
+browserDynamicPlatform().bootstrapModule(MyAppModule);

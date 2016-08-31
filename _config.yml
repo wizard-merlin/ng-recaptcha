@@ -14,9 +14,12 @@ github_username: "dethariel"
 devsuffix: ""
 
 # SystemJS mapping for ng2-recaptcha component
-recaptchaMapping: "https://npmcdn.com/ng2-recaptcha@1.2.0" # stick to a particular version to avoid caching confusion
+recaptchaMapping: "https://npmcdn.com/ng2-recaptcha@1.3.0" # stick to a particular version to avoid caching confusion
 # Uncomment to debug (you must run `cd examples && npm install` in order for that to work)
 #recaptchaMapping: "./examples/node_modules/ng2-recaptcha" # always fetch the latest npm version for production
 
 # Build settings
 markdown: kramdown
+
+exclude:
+  - examples/node_modules/typings
