@@ -1,6 +1,6 @@
 import { BrowserModule }  from '@angular/platform-browser';
-import { browserDynamicPlatform } from '@angular/platform-browser-dynamic';
-import { Component, NgModule, provide } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'ng2-recaptcha';
 
@@ -40,4 +40,4 @@ export class MyApp {
 })
 export class MyAppModule { }
 
-browserDynamicPlatform().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(MyAppModule);

@@ -1,8 +1,8 @@
 (function (global) {
   global.initSystemJS = function (recaptchaMapping, loadForms) {
     // lock in the angular package version; do not let it float to current!
-    var ngVer = '@2.0.0-rc.5';
-    var formsVersion = '@0.3.0';
+    var ngVer = '@2.0.0-rc.6';
+    var formsVersion = ngVer;
 
     //map tells the System loader where to look for things
     var map = {

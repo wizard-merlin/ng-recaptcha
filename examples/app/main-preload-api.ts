@@ -1,5 +1,5 @@
 import { BrowserModule }  from '@angular/platform-browser';
-import { browserDynamicPlatform } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Component, Injectable, NgModule } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
@@ -43,4 +43,4 @@ export class MyApp {
 })
 export class MyAppModule { }
 
-browserDynamicPlatform().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(MyAppModule);
