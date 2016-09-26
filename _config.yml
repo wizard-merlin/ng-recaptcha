@@ -8,13 +8,13 @@
 # Site settings
 title: Ng2-recaptcha
 email: dethariel@gmail.com
-description: "Angular 2 + TypeScript component for Google reCAPTCHA"
+description: "Angular 2 component for Google reCAPTCHA"
 baseurl: "/ng2-recaptcha" # the subpath of your site, e.g. /blog
 github_username: "dethariel"
 devsuffix: ""
 
 # SystemJS mapping for ng2-recaptcha component
-recaptchaMapping: "https://npmcdn.com/ng2-recaptcha@1.3.1" # stick to a particular version to avoid caching confusion
+recaptchaMapping: "https://npmcdn.com/ng2-recaptcha@1.3.2" # stick to a particular version to avoid caching confusion
 # Uncomment to debug (you must run `cd examples && npm run latest` in order for that to work)
 #recaptchaMapping: "./examples/node_modules/ng2-recaptcha" # always fetch the latest npm version for production
 
