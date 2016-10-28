@@ -11,7 +11,7 @@
       '@angular': 'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
       'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.12',
       'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript': 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js',
+      'typescript': 'https://npmcdn.com/typescript@2.0.6/lib/typescript.js',
       'ng2-recaptcha': recaptchaMapping,
     };
 
