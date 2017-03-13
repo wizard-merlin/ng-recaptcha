@@ -9,7 +9,7 @@
 title: Ng2-recaptcha
 email: dethariel@gmail.com
 description: "Angular 2 component for Google reCAPTCHA"
-baseurl: "/ng2-recaptcha" # the subpath of your site, e.g. /blog
+baseurl: "/ng-recaptcha" # the subpath of your site, e.g. /blog
 github_username: "dethariel"
 devsuffix: ""
 
