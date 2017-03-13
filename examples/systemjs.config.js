@@ -1,15 +1,14 @@
 (function (global) {
   global.initSystemJS = function (recaptchaMapping, loadForms) {
     // lock in the angular package version; do not let it float to current!
-    var ngVer = '@2.0.0';
-    var formsVersion = ngVer;
+    var ngVer = '@2.4.9';
 
     //map tells the System loader where to look for things
     var map = {
       'examples': './examples/app',
 
       '@angular': 'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
-      'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.12',
+      'rxjs': 'https://npmcdn.com/rxjs@5.2.0',
       'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
       'typescript': 'https://npmcdn.com/typescript@2.0.6/lib/typescript.js',
       'ng2-recaptcha': recaptchaMapping,
@@ -21,11 +20,6 @@
       'ng2-recaptcha': { main: 'ng2-recaptcha.js', defaultExtension: 'js' },
     };
 
-    if (loadForms) {
-      map['@angular/forms'] = 'https://npmcdn.com/@angular/forms' + formsVersion;
-      packages['@angular/forms'] = { main: 'bundles/forms.umd.js', defaultExtension: 'js' };
-    }
-
     var ngPackageNames = [
       'common',
       'compiler',
@@ -34,14 +28,15 @@
       'platform-browser-dynamic',
     ];
 
-    // Add map entries for each angular package
-    // only because we're pinning the version with `ngVer`.
-    ngPackageNames.forEach(function (pkgName) {
-      map['@angular/' + pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
-    });
+    if (loadForms) {
+      ngPackageNames.push('forms');
+    }
 
-    // Add package entries for angular packages
     ngPackageNames.forEach(function (pkgName) {
+      // Add map entries for each angular package
+      // only because we're pinning the version with `ngVer`.
+      map['@angular/' + pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
+      // Add package entries for angular packages
       packages['@angular/' + pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
     });
 
