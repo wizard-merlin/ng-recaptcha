@@ -1,8 +1,7 @@
 {
   "scripts": {
     "latest": "npm uninstall ng2-recaptcha && npm install ../../ng2-recaptcha",
-    "start": "cd .. && bundle exec jekyll serve",
-    "types": "typings install"
+    "start": "cd .. && bundle exec jekyll serve"
   },
   "dependencies": {
     "@angular/common": "^2.0.0",

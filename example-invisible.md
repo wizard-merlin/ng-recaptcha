@@ -6,6 +6,6 @@ feature: invisible
 backlink: example-invisible
 headextras: | 
     <script>
-        System.import('examples/main-invisible').catch(function(err) { console.error(err); });
+        System.import('examples/invisible.main').catch(function(err) { console.error(err); });
     </script>
 ---

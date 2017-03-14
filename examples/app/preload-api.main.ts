@@ -1,9 +1,11 @@
 import { BrowserModule }  from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { Component, Injectable, NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
-import { RecaptchaNoFormsModule, RecaptchaLoaderService } from 'ng2-recaptcha/ng2-recaptcha.noforms';
+import { RecaptchaModule, RecaptchaLoaderService } from 'ng-recaptcha';
+
+import { MyApp } from "./preload-api";
 
 @Injectable()
 export class PreloadedRecaptchaAPIService {
@@ -15,25 +17,10 @@ export class PreloadedRecaptchaAPIService {
   }
 }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <recaptcha
-      (resolved)="resolved($event)"
-      siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU"
-    ></recaptcha>
-  `,
-})
-export class MyApp {
-  resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
-  }
-}
-
 @NgModule({
   bootstrap: [MyApp],
   declarations: [MyApp],
-  imports: [BrowserModule, RecaptchaNoFormsModule.forRoot()],
+  imports: [BrowserModule, RecaptchaModule.forRoot()],
   providers: [
     {
       provide: RecaptchaLoaderService,

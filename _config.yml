@@ -1,25 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: Ng2-recaptcha
-email: dethariel@gmail.com
-description: "Angular 2 component for Google reCAPTCHA"
+title: Ng-recaptcha
+description: "Angular component for Google reCAPTCHA"
 baseurl: "/ng-recaptcha" # the subpath of your site, e.g. /blog
-github_username: "dethariel"
-devsuffix: ""
 
 # SystemJS mapping for ng2-recaptcha component
-recaptchaMapping: "https://npmcdn.com/ng2-recaptcha@1.7.0" # stick to a particular version to avoid caching confusion
+recaptchaMapping: "https://npmcdn.com/ng-recaptcha@2.0.0-beta1" # stick to a particular version to avoid caching confusion
 # Uncomment to debug (you must run `cd examples && npm run latest` in order for that to work)
-#recaptchaMapping: "./examples/node_modules/ng2-recaptcha"
+#recaptchaMapping: "./examples/node_modules/ng-recaptcha"
 
 # Build settings
 markdown: kramdown
-
-exclude:
-  - examples/node_modules/typings

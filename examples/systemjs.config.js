@@ -11,13 +11,13 @@
       'rxjs': 'https://npmcdn.com/rxjs@5.2.0',
       'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
       'typescript': 'https://npmcdn.com/typescript@2.0.6/lib/typescript.js',
-      'ng2-recaptcha': recaptchaMapping,
+      'ng-recaptcha': recaptchaMapping,
     };
 
     //packages tells the System loader how to load when no filename and/or no extension
     var packages = {
       'examples': { defaultExtension: 'ts' },
-      'ng2-recaptcha': { main: 'ng2-recaptcha.js', defaultExtension: 'js' },
+      'ng-recaptcha': { main: 'index.js', defaultExtension: 'js' },
     };
 
     var ngPackageNames = [

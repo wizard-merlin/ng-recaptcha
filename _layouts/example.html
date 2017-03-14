@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
     <script src="https://npmcdn.com/zone.js@0.7.8?main=browser"></script>
@@ -17,26 +20,36 @@
     {{ page.headextras }}
   </head>
   <body>
-    <div id="container">
-      <div class="inner">
-        {% include header.html %}
-        <section id="downloads" class="clearfix">
-            <a href="https://github.com/DethAriel/ng2-recaptcha#{{ page.backlink }}" id="view-on-github" class="button"><span>Back to GitHub</span></a>
-        </section>
+    {% include header.html %}
+    <div class="container">
+      <section id="downloads" class="clearfix">
+        <a href="https://github.com/DethAriel/ng2-recaptcha#{{ page.backlink }}" id="view-on-github" class="button"><span>Back to GitHub</span></a>
+      </section>
 
-        <div id="example">
-          <my-app></my-app>
-        </div>
-
-        <p>
-          This widget was rendered using <a href="examples/app/main-{{page.feature}}.ts">the following code</a>:
-        </p>
-{% highlight typescript %}
-{% include_relative examples/app/main-{{page.feature}}.ts %}
-{% endhighlight %}
-
-      {{ content }}
+      <div id="example">
+        <my-app></my-app>
       </div>
+
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#template" data-toggle="tab"><code>{{page.feature}}.html</code> (template)</a></li>
+        <li role="presentation"><a href="#component" data-toggle="tab"><code>{{page.feature}}.ts</code> (component)</a></li>
+        <li role="presentation"><a href="#module" data-toggle="tab"><code>main.ts</code> (module)</a></li>
+      </ul>
+
+      <div class="tab-content clearfix">
+        <div class="tab-pane active" id="template">
+          {% capture html_content %}{% include_relative examples/app/{{page.feature}}.html %}{% endcapture %}
+          <pre class="prettyprint lang-html">{{ html_content | escape }}</pre>
+        </div>
+        <div class="tab-pane" id="component">
+          <pre class="prettyprint lang-js">{% include_relative examples/app/{{page.feature}}.ts %}</pre>
+        </div>
+        <div class="tab-pane" id="module">
+          <pre class="prettyprint lang-js">{% include_relative examples/app/{{page.feature}}.main.ts %}</pre>
+        </div>
+      </div>
+      {{ content }}
     </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   </body>
 </html>

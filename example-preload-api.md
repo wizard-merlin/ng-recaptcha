@@ -9,12 +9,11 @@ headextras: |
     <script>
         // bootstrap the application as soon as the reCAPTCHA api has loaded 
         function onloadCallback() {
-            System.import('examples/main-preload-api').catch(function(err) { console.error(err); });
+            System.import('examples/preload-api.main')
+                .catch(function(err) { console.error(err); });
         }
     </script>
 ---
 
 HTML snippet:
-{% highlight html %}
-{{ page.headextras }}
-{% endhighlight %}
+<pre class="prettyprint lang-html">{{ page.headextras | escape }}</pre>

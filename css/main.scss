@@ -26,10 +26,5 @@ $baseurl:          '{{ site.baseurl }}';
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import 
-    "reset",
-    "common",
-    "layout",
-    "download-buttons",
-    "code"
+@import "download-buttons", "layout"
 ;

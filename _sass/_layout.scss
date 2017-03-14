@@ -1,14 +1,9 @@
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    color: $text-color;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-    background-color: $background-color;
-}
-
-#container {
-  min-height: 595px;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 #example {
@@ -18,14 +13,10 @@ body {
   border: 5px dashed $example-border-color;
 }
 
-.inner {
-  width: $content-width;
-  margin: 0 auto;
-}
-
 header {
   padding-top: 35px;
   padding-bottom: 25px;
+  background-color: $background-color;
 }
 
 header h1 {
@@ -45,5 +36,6 @@ header h2 {
 }
 
 #downloads {
+  margin-top: 40px;
   margin-bottom: 40px;
 }

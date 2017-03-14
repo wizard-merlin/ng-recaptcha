@@ -6,7 +6,7 @@ feature: basic
 backlink: example-basic
 headextras: | 
     <script>
-        System.import('examples/main-basic').catch(function(err) { console.error(err); });
+        System.import('examples/basic.main').catch(function(err) { console.error(err); });
     </script>
 
 ---

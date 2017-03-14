@@ -6,6 +6,6 @@ feature: language
 backlink: example-language
 headextras: |
     <script>
-        System.import('examples/main-language').catch(function(err) { console.error(err); });
+        System.import('examples/language.main').catch(function(err) { console.error(err); });
     </script>
 ---
