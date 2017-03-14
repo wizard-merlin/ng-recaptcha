@@ -10,5 +10,5 @@
   <div [hidden]="!captchaControl.valid" class="success">Captcha is valid</div>
   <div [hidden]="captchaProtectedForm.form.valid" class="error">The form must be filled out</div>
   <div [hidden]="!captchaProtectedForm.form.valid" class="success">The form is valid</div>
-  <a class="button small" (click)="formModel.captcha = ''"><span>Reset Captcha</span></a>
+  <button (click)="formModel.captcha = ''">Reset Captcha</button>
 </form>

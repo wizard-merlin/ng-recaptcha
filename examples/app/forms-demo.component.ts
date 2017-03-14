@@ -5,13 +5,13 @@ export class FormModel {
 }
 
 @Component({
-  selector: 'my-app',
+  selector: 'recaptcha-demo',
   styles: [`
       .error { color: crimson; }
       .success { color: green; }
   ` ],
-  templateUrl: './examples/app/forms.html',
+  templateUrl: './examples/app/forms-demo.component.html',
 })
-export class MyApp {
+export class FormsDemoComponent {
   formModel = new FormModel();
 }

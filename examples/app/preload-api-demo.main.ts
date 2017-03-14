@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { RecaptchaModule, RecaptchaLoaderService } from 'ng-recaptcha';
 
-import { MyApp } from "./preload-api";
+import { PreloadApiDemoComponent } from "./preload-api-demo.component";
 
 @Injectable()
 export class PreloadedRecaptchaAPIService {
@@ -18,8 +18,8 @@ export class PreloadedRecaptchaAPIService {
 }
 
 @NgModule({
-  bootstrap: [MyApp],
-  declarations: [MyApp],
+  bootstrap: [PreloadApiDemoComponent],
+  declarations: [PreloadApiDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
   providers: [
     {
@@ -28,6 +28,6 @@ export class PreloadedRecaptchaAPIService {
     },
   ],
 })
-export class MyAppModule { }
+export class DemoModule { }
 
-platformBrowserDynamic().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(DemoModule);

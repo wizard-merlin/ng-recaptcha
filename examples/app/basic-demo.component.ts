@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './examples/app/basic.html',
+  selector: 'recaptcha-demo',
+  templateUrl: './examples/app/basic-demo.component.html',
 })
-export class MyApp {
+export class BasicDemoComponent {
   resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response ${captchaResponse}:`);
   }

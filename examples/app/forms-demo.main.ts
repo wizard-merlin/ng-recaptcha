@@ -6,11 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
-import { MyApp } from "./forms";
+import { FormsDemoComponent } from "./forms-demo.component";
 
 @NgModule({
-  bootstrap: [MyApp],
-  declarations: [MyApp],
+  bootstrap: [FormsDemoComponent],
+  declarations: [FormsDemoComponent],
   imports: [
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
@@ -18,6 +18,6 @@ import { MyApp } from "./forms";
     FormsModule,
   ],
 })
-export class MyAppModule { }
+export class DemoModule { }
 
-platformBrowserDynamic().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(DemoModule);

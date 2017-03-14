@@ -4,13 +4,13 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { RecaptchaModule } from 'ng-recaptcha';
 
-import { MyApp } from "./basic";
+import { BasicDemoComponent } from "./basic-demo.component";
 
 @NgModule({
-  bootstrap: [MyApp],
-  declarations: [MyApp],
+  bootstrap: [BasicDemoComponent],
+  declarations: [BasicDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
 })
-export class MyAppModule { }
+export class DemoModule { }
 
-platformBrowserDynamic().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(DemoModule);

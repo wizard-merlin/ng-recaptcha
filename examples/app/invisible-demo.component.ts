@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './examples/app/invisible.html',
+  selector: 'recaptcha-demo',
+  templateUrl: './examples/app/invisible-demo.component.html',
 })
-export class MyApp {
+export class InvisibleDemoComponent {
   public captchaResponse: string = '';
   public resolved(captchaResponse: string) {
     let newResponse = captchaResponse

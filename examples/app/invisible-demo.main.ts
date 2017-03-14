@@ -4,13 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { RecaptchaModule } from 'ng-recaptcha';
 
-import { MyApp } from "./invisible";
+import { InvisibleDemoComponent } from "./invisible-demo.component";
 
 @NgModule({
-  bootstrap: [MyApp],
-  declarations: [MyApp],
+  bootstrap: [InvisibleDemoComponent],
+  declarations: [InvisibleDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
 })
-export class MyAppModule { }
+export class DemoModule { }
 
-platformBrowserDynamic().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(DemoModule);

@@ -7,11 +7,11 @@ import {
   RECAPTCHA_LANGUAGE,
 } from 'ng-recaptcha';
 
-import { MyApp } from "./language";
+import { LanguageDemoComponent } from "./language-demo.component";
 
 @NgModule({
-  bootstrap: [MyApp],
-  declarations: [MyApp],
+  bootstrap: [LanguageDemoComponent],
+  declarations: [LanguageDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
   providers: [
     {
@@ -20,6 +20,6 @@ import { MyApp } from "./language";
     },
   ],
 })
-export class MyAppModule { }
+export class DemoModule { }
 
-platformBrowserDynamic().bootstrapModule(MyAppModule);
+platformBrowserDynamic().bootstrapModule(DemoModule);
