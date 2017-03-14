@@ -4,7 +4,7 @@ description: "Angular component for Google reCAPTCHA"
 baseurl: "/ng-recaptcha" # the subpath of your site, e.g. /blog
 
 # SystemJS mapping for ng2-recaptcha component
-recaptchaMapping: "https://npmcdn.com/ng-recaptcha@2.0.0-beta1" # stick to a particular version to avoid caching confusion
+recaptchaMapping: "https://npmcdn.com/ng-recaptcha@2.0.0" # stick to a particular version to avoid caching confusion
 # Uncomment to debug (you must run `cd examples && npm run latest` in order for that to work)
 #recaptchaMapping: "./examples/node_modules/ng-recaptcha"
 
