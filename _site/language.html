@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Language Example | ng-recaptcha</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/ng-recaptcha/css/main.css?_=2.0.2"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-lime.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
+  <script src="https://npmcdn.com/zone.js@0.8.5?main=browser"></script>
+  <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+  <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+
+  <script src="/ng-recaptcha/examples/systemjs.config.js?_=2.0.2"></script>
+  <script>
+    window.initSystemJS("https://npmcdn.com/ng-recaptcha@2.0.2");
+  </script>
+  <script>
+    System.import('examples/language-demo.main').catch(function(err) { console.error(err); });
+</script>
+
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <img src="/ng-recaptcha/images/angular.svg" height="40px" class="mdl-layout--large-screen-only" />
+        <span class="mdl-layout-title">ng-recaptcha</span>
+        <span class="mdl-layout-title mdl-layout--large-screen-only">&nbsp;– Angular component for Google reCAPTCHA</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="https://github.com/DethAriel/ng2-recaptcha#example-language">
+            <i class="material-icons">link</i>
+            GitHub
+          </a>
+        </nav>
+      </div>
+      <div class="mdl-layout__tab-bar">
+        <a href="/ng-recaptcha/" class="mdl-layout__tab ">Basic</a>
+        <a href="/ng-recaptcha/forms" class="mdl-layout__tab ">Forms</a>
+        <a href="/ng-recaptcha/invisible" class="mdl-layout__tab ">Invisible</a>
+        <a href="/ng-recaptcha/language" class="mdl-layout__tab  is-active ">Language</a>
+        <a href="/ng-recaptcha/preload-api" class="mdl-layout__tab ">Preloaded</a>
+        <span class="mdl-layout__tab">&nbsp;</span>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--2-offset-desktop mdl-cell--6-col-tablet mdl-cell--1-offset-tablet mdl-cell--4-col-phone">
+
+          
+
+
+          <div class="example-container">
+            <recaptcha-demo></recaptcha-demo>
+          </div>
+
+          <div class="code-samples mdl-tabs mdl-js-tabs">
+            <div class="mdl-tabs__tab-bar">
+              <a href="#template" class="mdl-tabs__tab is-active"><code>language-demo.component.html</code></a>
+              <a href="#component" class="mdl-tabs__tab"><code>language-demo.component.ts</code></a>
+              <a href="#module" class="mdl-tabs__tab"><code>main.ts</code></a>
+              
+            </div>
+
+            <div class="mdl-tabs__panel is-active" id="template">
+              
+              <pre class="prettyprint lang-html">&lt;re-captcha
+  (resolved)=&quot;resolved($event)&quot;
+  siteKey=&quot;6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU&quot;
+&gt;&lt;/re-captcha&gt;</pre>
+            </div>
+            <div class="mdl-tabs__panel" id="component">
+              <pre class="prettyprint lang-js">import { Component } from '@angular/core';
+
+@Component({
+  selector: 'recaptcha-demo',
+  templateUrl: './examples/app/language-demo.component.html',
+})
+export class LanguageDemoComponent {
+  public resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
+}
+</pre>
+            </div>
+            <div class="mdl-tabs__panel" id="module">
+              <pre class="prettyprint lang-js">import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import {
+  RECAPTCHA_LANGUAGE,
+  RecaptchaLoaderService,
+  RecaptchaModule,
+} from 'ng-recaptcha';
+
+import { LanguageDemoComponent } from './language-demo.component';
+
+@NgModule({
+  bootstrap: [LanguageDemoComponent],
+  declarations: [LanguageDemoComponent],
+  imports: [BrowserModule, RecaptchaModule.forRoot()],
+  providers: [
+    {
+      provide: RECAPTCHA_LANGUAGE,
+      useValue: 'fr',
+    },
+  ],
+})
+export class DemoModule { }
+
+platformBrowserDynamic().bootstrapModule(DemoModule);
+</pre>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+
+</html>
