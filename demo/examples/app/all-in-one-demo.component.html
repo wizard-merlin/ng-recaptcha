@@ -1,0 +1,66 @@
+<form>
+  <div>
+    <label for="recaptcha-size">Size</label>
+    <select id="recaptcha-size" name="size"
+      [ngModel]="size" (ngModelChange)="size = $event; updateSitekey(size);"
+    >
+      <option value="normal">Normal</option>
+      <option value="compact">Compact</option>
+      <option value="invisible">Invisible</option>
+    </select>
+  </div>
+  <div *ngIf="size === 'invisible'">
+    <label for="recaptcha-badge">Badge</label>
+    <select id="recaptcha-badge" name="badge"
+      [(ngModel)]="badge"
+    >
+      <option value="bottomright">Bottom Right</option>
+      <option value="bottomleft">Bottom Left</option>
+      <option value="inline">Inline</option>
+    </select>
+  </div>
+  <div>
+    <label for="recaptcha-theme">Theme</label>
+    <select id="recaptcha-theme" name="theme"
+      [(ngModel)]="theme"
+    >
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </div>
+  <div>
+    <label for="recaptcha-type">Type</label>
+    <select id="recaptcha-type" name="type"
+      [(ngModel)]="type"
+    >
+      <option value="image">Image</option>
+      <option value="audio">Audio</option>
+    </select>
+  </div>
+  <div>
+    <label for="recaptcha-lang">Language</label>
+    <select id="recaptcha-lang" name="language"
+      [(ngModel)]="language"
+    >
+      <option value="">Auto</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
+  <div *ngIf="size === 'invisible'">
+    <button (click)="captcha.execute()">Execute</button>
+  </div>
+</form>
+
+<re-captcha #captcha="reCaptcha"
+  (resolved)="resolved($event)"
+  [siteKey]="sitekey"
+  [theme]="theme"
+  [type]="type"
+  [size]="size"
+  [tabIndex]="tabindex"
+  [badge]="badge"
+  [language]="language"
+></re-captcha>
+<pre>reCAPTCHA response log:
+{{ captchaResponse || '(empty)' }}</pre>

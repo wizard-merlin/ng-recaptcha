@@ -14,12 +14,6 @@ import { LanguageDemoComponent } from './language-demo.component';
   bootstrap: [LanguageDemoComponent],
   declarations: [LanguageDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
-  providers: [
-    {
-      provide: RECAPTCHA_LANGUAGE,
-      useValue: 'fr',
-    },
-  ],
 })
 export class DemoModule { }
 
