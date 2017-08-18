@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Language Example | ng-recaptcha</title>
+  <title>Global Config Example | ng-recaptcha</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
     window.initSystemJS("https://npmcdn.com/ng-recaptcha@2.2.0");
   </script>
   <script>
-    System.import('examples/language-demo.main').catch(function(err) { console.error(err); });
+    System.import('examples/global-config-demo.main').catch(function(err) { console.error(err); });
 </script>
 
 </head>
@@ -35,7 +35,7 @@
         <span class="mdl-layout-title mdl-layout--large-screen-only">&nbsp;– Angular component for Google reCAPTCHA</span>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="https://github.com/DethAriel/ng2-recaptcha#example-language">
+          <a class="mdl-navigation__link" href="https://github.com/DethAriel/ng2-recaptcha#example-global-config">
             <i class="material-icons">link</i>
             GitHub
           </a>
@@ -45,7 +45,7 @@
         <a href="/ng-recaptcha/" class="mdl-layout__tab ">Basic</a>
         <a href="/ng-recaptcha/forms" class="mdl-layout__tab ">Forms</a>
         <a href="/ng-recaptcha/invisible" class="mdl-layout__tab ">Invisible</a>
-        <a href="/ng-recaptcha/language" class="mdl-layout__tab  is-active ">Language</a>
+        <a href="/ng-recaptcha/language" class="mdl-layout__tab ">Language</a>
         <a href="/ng-recaptcha/preload-api" class="mdl-layout__tab ">Preloaded</a>
         <a href="/ng-recaptcha/global-config" class="mdl-layout__tab ">Global Config</a>
         <span class="mdl-layout__tab">&nbsp;</span>
@@ -64,27 +64,25 @@
 
           <div class="code-samples mdl-tabs mdl-js-tabs">
             <div class="mdl-tabs__tab-bar">
-              <a href="#template" class="mdl-tabs__tab is-active"><code>language-demo.component.html</code></a>
-              <a href="#component" class="mdl-tabs__tab"><code>language-demo.component.ts</code></a>
+              <a href="#template" class="mdl-tabs__tab is-active"><code>global-config-demo.component.html</code></a>
+              <a href="#component" class="mdl-tabs__tab"><code>global-config-demo.component.ts</code></a>
               <a href="#module" class="mdl-tabs__tab"><code>main.ts</code></a>
               
             </div>
 
             <div class="mdl-tabs__panel is-active" id="template">
               
-              <pre class="prettyprint lang-html">&lt;re-captcha
-  (resolved)=&quot;resolved($event)&quot;
-  siteKey=&quot;6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU&quot;
-&gt;&lt;/re-captcha&gt;</pre>
+              <pre class="prettyprint lang-html">&lt;re-captcha (resolved)=&quot;resolved($event)&quot;&gt;&lt;/re-captcha&gt;
+</pre>
             </div>
             <div class="mdl-tabs__panel" id="component">
               <pre class="prettyprint lang-js">import { Component } from '@angular/core';
 
 @Component({
   selector: 'recaptcha-demo',
-  templateUrl: './examples/app/language-demo.component.html',
+  templateUrl: './examples/app/global-config-demo.component.html',
 })
-export class LanguageDemoComponent {
+export class GlobalConfigDemoComponent {
   public resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response ${captchaResponse}:`);
   }
@@ -97,21 +95,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import {
-  RECAPTCHA_LANGUAGE,
+  RECAPTCHA_SETTINGS,
+  RecaptchaSettings,
   RecaptchaLoaderService,
   RecaptchaModule,
 } from 'ng-recaptcha';
 
-import { LanguageDemoComponent } from './language-demo.component';
+import { GlobalConfigDemoComponent } from './global-config-demo.component';
+
+const globalSettings: RecaptchaSettings = { siteKey: '6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU' };
 
 @NgModule({
-  bootstrap: [LanguageDemoComponent],
-  declarations: [LanguageDemoComponent],
+  bootstrap: [GlobalConfigDemoComponent],
+  declarations: [GlobalConfigDemoComponent],
   imports: [BrowserModule, RecaptchaModule.forRoot()],
   providers: [
     {
-      provide: RECAPTCHA_LANGUAGE,
-      useValue: 'fr',
+      provide: RECAPTCHA_SETTINGS,
+      useValue: globalSettings,
     },
   ],
 })
