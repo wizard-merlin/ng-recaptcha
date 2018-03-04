@@ -48,7 +48,7 @@ export class RecaptchaLoaderService {
       const script = document.createElement('script') as HTMLScriptElement;
       script.innerHTML = '';
       const langParam = this.language ? '&hl=' + this.language : '';
-      script.src = `https://www.google.com/recaptcha/api.js?render=explicit&onload=ng2recaptchaloaded${langParam}`;
+      script.src = `https://recaptcha.net/recaptcha/api.js?render=explicit&onload=ng2recaptchaloaded${langParam}`;
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);
